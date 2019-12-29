@@ -1,7 +1,7 @@
-module MuxAdd (PCout, AddOut, AndOut, PCin);
+module MuxAdd (PCout, AddOut, Add4Out, AndOut, PCin);
 
-	input [31:0] PCout, Add_ALUOut;
-	input AndGateOut;	
+	input [31:0] PCout, AddOut, Add4Out;
+	input AndOut;	
 	
 	output reg [31:0] PCin;
 	
@@ -10,9 +10,9 @@ module MuxAdd (PCout, AddOut, AndOut, PCin);
 	end
 	
 	always @(*) begin
-		case (AndGateOut)
-			0: PCin <= PCout ;
-			1: PCin <= Add_ALUOut;
+		case (AndOut)
+			0: PCin <= Add4Out;
+			1: PCin <= AddOut;
 		endcase
 	end
 endmodule

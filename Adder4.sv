@@ -1,12 +1,12 @@
-module Adder4(PCout, i, AddOut);
+module Adder4(PCout, i, Add4Out);
 
 	input [63:0] PCout;
 	input i;
 	
-	output reg [63:0] AddOut;
+	output reg [63:0] Add4Out;
 
 	always @(*) begin
 		i <= 4;
-		AddOut <= PCout + i;
+		Add4Out <= PCout + i;
 	end
 endmodule
