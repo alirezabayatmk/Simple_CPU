@@ -1,9 +1,6 @@
 `default_nettype none
 `timescale 1ns/10ps
 
-`include "clk.sv"
-
-
 module PC(clock, reset, PCin, PCout);
 
     input clock, reset;

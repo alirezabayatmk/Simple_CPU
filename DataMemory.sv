@@ -1,29 +1,25 @@
 `default_nettype none
 `timescale 1ns/10ps
 
-`include "clk.sv"
-`include "pc.sv"
-
-
 module DataMemory (clock, address, MemWrite, MemRead, WriteData, ReadData);
 
 	input clock;
-	input [6:0] address;
+	input [63:0] address;
 	input MemWrite, MemRead;
-	input [31:0] WriteData; 
-	output reg [31:0] ReadData;
+	input [63:0] WriteData; 
+	output reg [63:0] ReadData;
 
-	reg [31:0] Mem[0:127];
+	reg [255:0] Mem[0:255];
 	
 	always @ (posedge clock) begin
 	
 		if (MemWrite == 1)
-			Mem[address[6:2]] <= WriteData;
+			Mem[address] <= WriteData;
 	end
 	
 	always @(negedge clock) begin
 		if (MemRead == 1)
-			ReadData <= Mem[address[6:2]];
+			ReadData <= Mem[address];
 	end	
 endmodule
 
