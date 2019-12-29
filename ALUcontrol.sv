@@ -15,7 +15,9 @@ module ALUControl (ALUOp, FuncCode, ALUCtl);
 			34: ALUCtl <= 6; //subtract		
 			36: ALUCtl <= 0; //and	
 			37: ALUCtl <= 1; //or	
-			default: ALUCtl <= 15; //should not happen
+			default: ALUCtl <= 15;
 		endcase
 	end
 endmodule
+
+// FuncCode = instruction[30] | instruction[14:12]
