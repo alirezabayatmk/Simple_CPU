@@ -4,9 +4,9 @@
 module PC(clock, reset, PCin, PCout);
 
     input clock, reset;
-    input [31:0] PCin;
+    input [63:0] PCin;
     
-    output reg [31:0] PCout;
+    output reg [63:0] PCout;
     
     always @(posedge clock) begin
         if (reset == 1) 
