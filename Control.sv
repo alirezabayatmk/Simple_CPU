@@ -1,5 +1,5 @@
 module Control(
-	input [6:0] Opcode, 
+	input [10:0] Opcode, 
 	output reg RegWrite, ALUSrc, MemtoReg, MemRead, MemWrite, Branch, 
 	output reg [1:0 ALUOp])
 
