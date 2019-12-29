@@ -7,12 +7,8 @@ module InstMem(clock, address, inst);
 	
 	reg [255:0] Mem [0:255];
 	
-	initial begin
-		$readmemb("instruction.txt", Mem, 0, 5);
-	end
-	
 	always @( posedge clock) begin
-		inst <= Mem[address[63:0]];
+		inst <= Mem[address];
 	end
 endmodule
 
