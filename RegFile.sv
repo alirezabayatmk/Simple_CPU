@@ -4,11 +4,11 @@ module RegFile(clock, RegWrite, ReadReg1, ReadReg2, WriteReg, WriteData, ReadDat
 	input RegWrite;
 	
 	input [4:0] ReadReg1, ReadReg2, WriteReg;
-	input [31:0] WriteData;
+	input [63:0] WriteData;
 		
-	output [31:0] ReadData1, ReadData2;
+	output [63:0] ReadData1, ReadData2;
 	
-	reg [31:0] reg_mem [0:31];
+	reg [63:0] reg_mem [0:63];
 
 	assign ReadData1 = reg_mem[ReadReg1];
 	assign ReadData2 = reg_mem[ReadReg2];
@@ -18,3 +18,7 @@ module RegFile(clock, RegWrite, ReadReg1, ReadReg2, WriteReg, WriteData, ReadDat
 			reg_mem[WriteReg] = WriteData;
 	end	
 endmodule
+
+// ReadReg1 = instruction[19:15]
+// ReadReg2 = instruction[24:20]
+// WriteReg = instruction[11:7]
