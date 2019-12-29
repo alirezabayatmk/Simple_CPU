@@ -4,7 +4,7 @@ module Shift (ShiftIn, ShiftOut);
 	output reg [63:0] ShiftOut;
 	
 	always @(ShiftIn) begin
-		ShiftOut = ShiftIn << 2;
+		ShiftOut = ShiftIn << 1;
 	end 
 	
 endmodule

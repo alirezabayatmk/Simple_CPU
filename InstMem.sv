@@ -1,11 +1,11 @@
 module InstMem(clock, address, inst);
 
 	input clock;
-	input [63:0] address;
+	input [31:0] address;
 	
-	output reg [63:0] inst;
+	output reg [31:0] inst;
 	
-	reg [255:0] Mem [0:255];
+	reg [31:0] Mem [0:127];
 	
 	always @( posedge clock) begin
 		inst <= Mem[address];

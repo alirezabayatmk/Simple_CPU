@@ -8,14 +8,14 @@ module RegFile(clock, RegWrite, ReadReg1, ReadReg2, WriteReg, WriteData, ReadDat
 		
 	output [63:0] ReadData1, ReadData2;
 	
-	reg [63:0] reg_mem [0:63];
+	reg [31:0] reg_mem [0:127];
 
 	assign ReadData1 = reg_mem[ReadReg1];
 	assign ReadData2 = reg_mem[ReadReg2];
 	
 	always @(posedge clock) begin
 		if (RegWrite == 1)
-			reg_mem[WriteReg] = WriteData;
+			reg_mem[WriteReg] <= WriteData;
 	end	
 endmodule
 
