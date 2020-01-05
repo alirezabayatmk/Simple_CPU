@@ -8,7 +8,7 @@ module RegFile(clock, RegWrite, ReadReg1, ReadReg2, WriteReg, WriteData, ReadDat
 		
 	output [63:0] ReadData1, ReadData2;
 	
-	reg [31:0] reg_mem [0:127];
+	reg [31:0] reg_mem [0:1023];
 
 	assign ReadData1 = reg_mem[ReadReg1];
 	assign ReadData2 = reg_mem[ReadReg2];

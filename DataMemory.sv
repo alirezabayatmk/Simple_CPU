@@ -9,7 +9,14 @@ module DataMemory (clock, address, MemWrite, MemRead, WriteData, ReadData);
 	input [63:0] WriteData; 
 	output reg [63:0] ReadData;
 
-	reg [255:0] Mem[0:255];
+	reg [255:0] Mem[0:1023];
+
+	initial begin 
+		ReadData <= 0;
+		for (i=0;i<256;i=i+1) begin
+			Mem[i] <= 0;
+		end
+	end
 	
 	always @ (posedge clock) begin
 	

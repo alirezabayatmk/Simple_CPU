@@ -1,9 +1,9 @@
 module MuxAdd (PCout, AddOut, Add4Out, AndOut, PCin);
 
-	input [31:0] PCout, AddOut, Add4Out;
+	input [63:0] PCout, AddOut, Add4Out;
 	input AndOut;	
 	
-	output reg [31:0] PCin;
+	output reg [63:0] PCin;
 	
 	initial begin
 		PCin <= 0;

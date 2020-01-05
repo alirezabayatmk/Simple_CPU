@@ -20,6 +20,11 @@ module CPU(clock, reset,
 	input clock;
 	input reset;
 
+	initial begin 
+		reset = 1;
+		#5 reset = 0;
+	end
+
 	//Program Counter//
 	output wire [63:0] PCin, PCout;
 	PC pc_0(.clock(clock), .reset(reset), .PCin(PCin), .PCout(PCout));
@@ -83,7 +88,7 @@ module CPU(clock, reset,
 	output wire [63:0] WriteData_Reg;
 	MuxMem mux_mem_0(.ReadData(ReadData), .ALUOut(ALUOut), .WriteData_Reg(WriteData_Reg), .MemtoReg(MemtoReg));
 	
-	
+
 	//Register Multiplexer//
 	output wire [63:0] ALU_B;
 	MuxReg mux_reg_0(.ALUSrc(ALUSrc), .ReadData2(ReadData2), .Extend64(Extend64), .ALU_B(ALU_B));
