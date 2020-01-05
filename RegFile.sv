@@ -3,7 +3,7 @@ module RegFile(clock, RegWrite, ReadReg1, ReadReg2, WriteReg, WriteData, ReadDat
 	input clock;
 	input RegWrite;
 	
-	input [4:0] ReadReg1, ReadReg2, WriteReg;
+	input [4:0] ReadReg1, ReadReg2, WriteReg; //19-15 * 24-20 * 11-7
 	input [63:0] WriteData;
 		
 	output [63:0] ReadData1, ReadData2;

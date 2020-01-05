@@ -12,7 +12,7 @@ module PC(clock, reset, PCin, PCout);
         if (reset == 1) 
             PCout <= 0;
         else 
-            PCout <= PCin + 4; 
+            PCout <= PCin; 
     end
 endmodule
 

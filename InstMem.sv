@@ -5,7 +5,7 @@ module InstMem(clock, address, inst);
 	
 	output reg [31:0] inst;
 	
-	reg [31:0] Mem [0:127];
+	reg [31:0] Mem [0:31];
 	
 	always @( posedge clock) begin
 		inst <= Mem[address];
